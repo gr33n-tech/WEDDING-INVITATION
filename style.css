@@ -1,0 +1,233 @@
+* { box-sizing: border-box; }
+:root {
+  --wine: #35151d;
+  --wine-deep: #260d14;
+  --gold: #e8c77b;
+  --gold-soft: #cba65d;
+  --ivory: #fff4df;
+  --muted: #e4d3b5;
+}
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--ivory);
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(112, 47, 57, .45), transparent 48%),
+    linear-gradient(145deg, #1d0b11, #43202a 55%, #210d14);
+  font-family: "Montserrat", Arial, sans-serif;
+}
+.topbar {
+  width: min(1120px, 92%);
+  margin: auto;
+  min-height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.topbar-mark {
+  color: var(--gold);
+  font: 600 20px "Cinzel", Georgia, serif;
+  letter-spacing: 2px;
+}
+.topbar-mark span { font-family: "Cormorant Garamond", Georgia, serif; font-style: italic; }
+.topbar-label { color: #d7c5a8; font: italic 16px "Cormorant Garamond", Georgia, serif; }
+.print-button {
+  border: 1px solid rgba(232,199,123,.65);
+  border-radius: 999px;
+  padding: 10px 17px;
+  color: var(--gold);
+  background: transparent;
+  font: 500 11px "Montserrat", sans-serif;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: .2s ease;
+}
+.print-button:hover { background: var(--gold); color: var(--wine); }
+.invitation-wrap { width: min(100%, 760px); margin: 24px auto 0; padding: 0 20px; }
+.invitation-card {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  min-height: 1050px;
+  padding: 66px 54px 58px;
+  background:
+    radial-gradient(ellipse at 50% 40%, rgba(120,54,64,.35), transparent 56%),
+    linear-gradient(155deg, #3d1b25, var(--wine) 54%, #4a202d);
+  border: 1px solid rgba(232,199,123,.78);
+  box-shadow: 0 25px 80px rgba(0,0,0,.38), inset 0 0 55px rgba(0,0,0,.24);
+  text-align: center;
+}
+.invitation-card::before, .invitation-card::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: 220px; height: 220px;
+  border: 1px solid rgba(232,199,123,.2);
+  border-radius: 50%;
+}
+.invitation-card::before { top: -145px; left: -145px; }
+.invitation-card::after { bottom: -145px; right: -145px; }
+.inner-frame {
+  position: absolute;
+  inset: 18px;
+  border: 1px solid rgba(232,199,123,.52);
+  pointer-events: none;
+}
+.inner-frame::before, .inner-frame::after {
+  content: "✧";
+  position: absolute;
+  color: var(--gold);
+  font-size: 20px;
+  background: var(--wine);
+  padding: 0 8px;
+}
+.inner-frame::before { top: -12px; left: 50%; transform: translateX(-50%); }
+.inner-frame::after { bottom: -12px; left: 50%; transform: translateX(-50%); }
+.corner {
+  position: absolute;
+  z-index: 1;
+  color: var(--gold);
+  opacity: .8;
+  font: 58px "Cormorant Garamond", Georgia, serif;
+  line-height: 1;
+}
+.corner-tl { top: 25px; left: 28px; transform: rotate(-45deg); }
+.corner-tr { top: 25px; right: 28px; transform: scaleX(-1) rotate(-45deg); }
+.corner-bl { bottom: 25px; left: 28px; transform: scaleY(-1) rotate(-45deg); }
+.corner-br { bottom: 25px; right: 28px; transform: scale(-1) rotate(-45deg); }
+.card-content { position: relative; z-index: 2; max-width: 540px; margin: auto; }
+.crest {
+  width: 66px; height: 66px;
+  margin: 0 auto 23px;
+  border: 1px solid var(--gold-soft);
+  outline: 1px solid rgba(203,166,93,.4);
+  outline-offset: 5px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center; gap: 3px;
+  color: var(--gold);
+  font: 17px "Cinzel", Georgia, serif;
+}
+.crest i { font: italic 18px "Cormorant Garamond", Georgia, serif; }
+.eyebrow, .request-line, .venue-label, .rsvp-heading {
+  color: var(--muted);
+  font-size: 10px;
+  letter-spacing: 2.2px;
+  text-transform: uppercase;
+}
+.eyebrow { margin: 0 0 14px; }
+h1 {
+  margin: 0;
+  color: var(--gold);
+  font: 500 clamp(25px, 5vw, 36px) "Cinzel", Georgia, serif;
+  letter-spacing: 2px;
+}
+.request-line { margin: 15px 0 30px; font-size: 9px; letter-spacing: 1.7px; }
+.couple-names {
+  display: flex; flex-direction: column; align-items: center;
+  color: var(--gold);
+  font: 500 clamp(34px, 7vw, 48px)/1.08 "Cormorant Garamond", Georgia, serif;
+}
+.ampersand { margin: 8px 0; font-style: italic; font-size: 30px; color: var(--ivory); }
+.intro { color: var(--muted); font: italic 18px "Cormorant Garamond", Georgia, serif; margin: 22px 0 24px; }
+.gold-divider { display: flex; align-items: center; gap: 12px; width: 170px; margin: 0 auto 24px; color: var(--gold); }
+.gold-divider::before, .gold-divider::after { content: ""; height: 1px; background: linear-gradient(90deg, transparent, var(--gold-soft)); flex: 1; }
+.gold-divider::after { transform: rotate(180deg); }
+.event-details p { margin: 0; }
+.day { color: var(--ivory); font: italic 23px "Cormorant Garamond", Georgia, serif; }
+.date { color: var(--gold); font: 500 27px "Cinzel", Georgia, serif; letter-spacing: .5px; margin-top: 5px !important; }
+.date sup { font-size: 12px; }
+.time { color: var(--ivory); font: 500 13px "Montserrat", sans-serif; letter-spacing: 2px; margin-top: 10px !important; }
+.detail-rule { width: 38px; height: 1px; margin: 22px auto 17px; background: var(--gold-soft); }
+.venue-label { margin-bottom: 8px !important; font-size: 9px; }
+.venue { color: var(--gold); font: 600 20px "Cormorant Garamond", Georgia, serif; }
+.reception, .welcome {
+  max-width: 440px; margin-left: auto; margin-right: auto;
+  color: var(--muted); font: 17px/1.45 "Cormorant Garamond", Georgia, serif;
+}
+.reception { margin-top: 25px; }
+.welcome { margin-top: 13px; font-style: italic; }
+.rsvp { margin-top: 25px; }
+.rsvp-heading { color: var(--gold); margin-bottom: 12px; font-size: 9px; }
+.contacts { display: flex; flex-direction: column; gap: 8px; }
+.contacts a {
+  color: var(--ivory); text-decoration: none; font-size: 11px;
+  letter-spacing: .2px;
+}
+.contacts a strong { color: var(--gold); margin-left: 6px; font-weight: 500; }
+.contacts a:hover { text-decoration: underline; text-decoration-color: var(--gold); }
+blockquote {
+  max-width: 430px; margin: 29px auto 0; padding-top: 18px;
+  border-top: 1px solid rgba(203,166,93,.45);
+  color: var(--gold); font: italic 19px/1.35 "Cormorant Garamond", Georgia, serif;
+}
+blockquote cite { display: block; margin-top: 7px; color: var(--muted); font: 10px "Montserrat", sans-serif; letter-spacing: 1.5px; }
+.digital-actions { width: min(650px, 90%); margin: 42px auto 55px; text-align: center; }
+.action-note { color: #e5d5bd; font: italic 20px "Cormorant Garamond", Georgia, serif; }
+.action-buttons { display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; margin: 22px 0 32px; }
+.action-button {
+  display: inline-flex; justify-content: center; align-items: center;
+  min-height: 42px; padding: 0 19px; border-radius: 999px;
+  border: 1px solid rgba(232,199,123,.65); color: var(--gold);
+  background: transparent; text-decoration: none; cursor: pointer;
+  font: 500 10px "Montserrat", sans-serif; letter-spacing: 1px; text-transform: uppercase;
+}
+.action-button.primary { background: var(--gold); color: var(--wine); }
+.action-button:hover { background: var(--ivory); color: var(--wine); border-color: var(--ivory); }
+.countdown { padding: 22px; border: 1px solid rgba(232,199,123,.28); background: rgba(0,0,0,.12); }
+.countdown-label { color: var(--muted); font: italic 18px "Cormorant Garamond", Georgia, serif; }
+.countdown-grid { display: flex; justify-content: center; gap: clamp(16px, 5vw, 42px); margin-top: 17px; }
+.countdown-grid div { display: flex; flex-direction: column; gap: 4px; min-width: 45px; }
+.countdown-grid strong { color: var(--gold); font: 27px "Cinzel", Georgia, serif; }
+.countdown-grid small { color: var(--muted); font-size: 8px; letter-spacing: 1.3px; text-transform: uppercase; }
+footer { padding: 0 15px 28px; text-align: center; color: #bda98d; font: italic 15px "Cormorant Garamond", Georgia, serif; }
+footer span { color: var(--gold); padding: 0 7px; }
+
+@media (max-width: 600px) {
+  .topbar { min-height: 65px; }
+  .topbar-label { display: none; }
+  .invitation-wrap { margin-top: 10px; padding: 0 10px; }
+  .invitation-card { min-height: auto; padding: 54px 27px 48px; }
+  .inner-frame { inset: 12px; }
+  .corner { font-size: 42px; }
+  .corner-tl, .corner-tr { top: 17px; }
+  .corner-bl, .corner-br { bottom: 17px; }
+  .couple-names { font-size: clamp(32px, 9vw, 43px); }
+  .reception, .welcome { font-size: 16px; }
+  blockquote { font-size: 17px; }
+  .countdown-grid { gap: 13px; }
+  .countdown-grid strong { font-size: 22px; }
+}
+@page { size: A5 portrait; margin: 0; }
+@media print {
+  body { background: white; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+  .topbar, .digital-actions, footer { display: none !important; }
+  .invitation-wrap { width: 148mm; margin: 0; padding: 0; }
+  .invitation-card {
+    width: 148mm; height: 210mm; min-height: 210mm;
+    padding: 13mm 12mm 10mm; box-shadow: none;
+    border: 1px solid rgba(232,199,123,.9);
+  }
+  .inner-frame { inset: 4mm; }
+  .corner { font-size: 42px; }
+  .corner-tl, .corner-tr { top: 5mm; }
+  .corner-bl, .corner-br { bottom: 5mm; }
+  .crest { width: 14mm; height: 14mm; margin-bottom: 5mm; }
+  .eyebrow { margin-bottom: 3mm; }
+  h1 { font-size: 22pt; }
+  .request-line { margin: 3mm 0 6mm; }
+  .couple-names { font-size: 30pt; }
+  .ampersand { margin: 1mm 0; font-size: 20pt; }
+  .intro { margin: 4mm 0; font-size: 14pt; }
+  .gold-divider { margin-bottom: 4mm; }
+  .day { font-size: 17pt; }
+  .date { font-size: 20pt; }
+  .time { margin-top: 2mm !important; }
+  .detail-rule { margin: 4mm auto 3mm; }
+  .venue { font-size: 16pt; }
+  .reception, .welcome { font-size: 12pt; margin-top: 4mm; }
+  .rsvp { margin-top: 4mm; }
+  blockquote { margin-top: 5mm; padding-top: 3mm; font-size: 14pt; }
+}

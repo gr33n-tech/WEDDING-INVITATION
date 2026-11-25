@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#35151d">
+  <meta name="description" content="Wedding invitation for Nicholas Gachugi and Lucy Wanjiku — 31 January 2027.">
+  <title>Nicholas & Lucy | Wedding Invitation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <span class="topbar-mark">N <span>&</span> L</span>
+    <span class="topbar-label">A celebration of love</span>
+    <button class="print-button" id="printButton" type="button">Print invitation</button>
+  </header>
+
+  <main>
+    <section class="invitation-wrap" aria-label="Wedding invitation">
+      <article class="invitation-card">
+        <div class="corner corner-tl" aria-hidden="true">❧</div>
+        <div class="corner corner-tr" aria-hidden="true">❧</div>
+        <div class="corner corner-bl" aria-hidden="true">❧</div>
+        <div class="corner corner-br" aria-hidden="true">❧</div>
+        <div class="inner-frame" aria-hidden="true"></div>
+
+        <div class="card-content">
+          <div class="crest" aria-hidden="true"><span>N</span><i>&</i><span>L</span></div>
+          <p class="eyebrow">Together with their families</p>
+          <h1>Wedding Invitation</h1>
+          <p class="request-line">request the pleasure of your company</p>
+
+          <div class="couple-names">
+            <span>Nicholas Gachugi</span>
+            <span class="ampersand">&</span>
+            <span>Lucy Wanjiku</span>
+          </div>
+
+          <p class="intro">as they are united in Holy Matrimony</p>
+
+          <div class="gold-divider"><span>✦</span></div>
+
+          <div class="event-details">
+            <p class="day">Sunday</p>
+            <p class="date">31<sup>st</sup> January 2027</p>
+            <p class="time">11:00 AM</p>
+            <div class="detail-rule"></div>
+            <p class="venue-label">Ceremony venue</p>
+            <p class="venue">Birithia Catholic Parish</p>
+          </div>
+
+          <p class="reception">
+            The wedding reception will follow immediately after the ceremony
+            at their home ground.
+          </p>
+
+          <p class="welcome">
+            Your presence, prayers and blessings will make this special occasion
+            even more memorable as they begin their journey together.
+          </p>
+
+          <div class="rsvp">
+            <p class="rsvp-heading">For inquiries &amp; RSVP</p>
+            <div class="contacts">
+              <a href="tel:+254721223421">Nicholas Gachugi <strong>0721 223 421</strong></a>
+              <a href="tel:+254720316951">Lucy Wanjiku <strong>0720 316 951</strong></a>
+            </div>
+          </div>
+
+          <blockquote>
+            “Therefore what God has joined together, let no one separate.”
+            <cite>— Mark 10:9</cite>
+          </blockquote>
+        </div>
+      </article>
+    </section>
+
+    <section class="digital-actions" aria-label="Invitation actions">
+      <p class="action-note">We would be honoured to celebrate this special day with you.</p>
+      <div class="action-buttons">
+        <a class="action-button primary" href="tel:+254721223421">Call Nicholas</a>
+        <a class="action-button" href="tel:+254720316951">Call Lucy</a>
+        <button class="action-button" id="calendarButton" type="button">Add to calendar</button>
+      </div>
+      <div class="countdown" aria-live="polite">
+        <span class="countdown-label">Counting down to the big day</span>
+        <div class="countdown-grid">
+          <div><strong id="days">--</strong><small>Days</small></div>
+          <div><strong id="hours">--</strong><small>Hours</small></div>
+          <div><strong id="minutes">--</strong><small>Minutes</small></div>
+          <div><strong id="seconds">--</strong><small>Seconds</small></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>Made with love for Nicholas &amp; Lucy <span>✦</span> 31 January 2027</footer>
+  <script src="script.js"></script>
+</body>
+</html>
